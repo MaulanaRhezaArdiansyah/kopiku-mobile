@@ -6,7 +6,9 @@ const styles = StyleSheet.create({
     height: "100%",
     backgroundColor: "#fff",
     alignItems: "center",
+    // justifyContent: "space-between",
     justifyContent: "center",
+    paddingVertical: 20,
   },
   textWelcome: {
     color: "#000",
@@ -14,7 +16,13 @@ const styles = StyleSheet.create({
     fontSize: 60,
     textAlign: "center",
   },
-  getStartButton: {
+  subTextWelcome: {
+    color: "#000",
+    fontWeight: "400",
+    fontSize: 16,
+    textAlign: "center",
+  },
+  createAccountButton: {
     backgroundColor: "#6A4029",
     width: 350,
     height: 70,
@@ -23,10 +31,23 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 20,
+    marginTop: 50,
+  },
+  inputForm: {
+    borderBottomColor: "#9F9F9F",
+    borderBottomWidth: 1,
+    width: 350,
+    height: 50,
+    textAlign: "left",
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    color: "#9A9A9D",
+    fontSize: 18,
+    marginBottom: 15,
   },
   image: {
-    flex: 1,
-    justifyContent: "center",
+    marginBottom: 20,
   },
 });
 
