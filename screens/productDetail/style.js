@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     opacity: 1 / 2,
     marginBottom: 30,
   },
-  test: {
+  navbarImage: {
     width: 40,
     height: 40,
     display: "flex",

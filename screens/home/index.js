@@ -40,7 +40,7 @@ export default function HomePage({ navigation }) {
             />
           </Pressable>
 
-          <Pressable>
+          <Pressable onPress={() => navigation.navigate("Profile Page")}>
             <View style={[styles.profilePic]}>
               <Image
                 style={commonStyle.imageCircle}

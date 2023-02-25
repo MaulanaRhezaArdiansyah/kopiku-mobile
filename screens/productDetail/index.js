@@ -21,10 +21,13 @@ export default function ProductDetail({ navigation }) {
   return (
     <View style={[commonStyle.px40, styles.container]}>
       <View style={styles.navbar}>
-        <Pressable style={styles.test} onPress={() => navigation.goBack()}>
+        <Pressable
+          style={styles.navbarImage}
+          onPress={() => navigation.goBack()}
+        >
           <Image source={require("../../src/assets/images/go-back-2.png")} />
         </Pressable>
-        <Pressable style={styles.test}>
+        <Pressable style={styles.navbarImage}>
           <Image
             source={require("../../src/assets/images/shopping-cart-2.png")}
           />
