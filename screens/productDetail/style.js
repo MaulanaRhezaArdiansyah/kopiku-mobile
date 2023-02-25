@@ -1,0 +1,71 @@
+import { StyleSheet } from "react-native";
+
+const styles = StyleSheet.create({
+  container: {
+    display: "flex",
+    width: "100%",
+    height: "100%",
+    // paddingTop: 80,
+    paddingTop: 60,
+  },
+  navbar: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+    alignItems: "center",
+  },
+  imageBox: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: 300,
+  },
+  productImage: {
+    width: 250,
+    height: 250,
+    borderRadius: 1000,
+  },
+  productTitle: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  productTitleText: {
+    fontWeight: "900",
+    fontSize: 40,
+  },
+  productPriceText: {
+    fontWeight: "700",
+    fontSize: 24,
+    color: "#6A4029",
+    marginBottom: 30,
+  },
+  deliveryInfoText: {
+    fontWeight: "900",
+    fontSize: 18,
+  },
+  deliveryInfoSubtext: {
+    fontSize: 16,
+    opacity: 1 / 2,
+    marginBottom: 30,
+  },
+  descriptionText: {
+    fontWeight: "900",
+    fontSize: 18,
+  },
+  descriptionSubtext: {
+    fontSize: 16,
+    opacity: 1 / 2,
+    marginBottom: 30,
+  },
+  test: {
+    width: 40,
+    height: 40,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
+
+export default styles;

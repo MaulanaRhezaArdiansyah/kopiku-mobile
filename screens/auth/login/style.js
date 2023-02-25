@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
     textDecorationColor: "#6A4029",
     fontSize: 15,
-    marginBottom: 15,
+    marginBottom: 50,
   },
 });
 
