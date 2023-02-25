@@ -14,6 +14,7 @@ export default function WelcomeAuth({ navigation }) {
       </View>
       <View>
         <Image
+          style={styles.image}
           source={require("../../../src/assets/images/welcome-auth-img.png")}
         />
       </View>

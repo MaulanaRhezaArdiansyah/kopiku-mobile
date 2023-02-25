@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
     height: "100%",
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "center",
+    // justifyContent: "space-between",
     paddingVertical: 20,
   },
   textWelcome: {
@@ -20,6 +21,7 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     fontSize: 16,
     textAlign: "center",
+    marginBottom: 50,
   },
   createAccountButton: {
     backgroundColor: "#6A4029",
@@ -43,8 +45,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   image: {
-    flex: 1,
     justifyContent: "center",
+    marginBottom: 50,
   },
 });
 

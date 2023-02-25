@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
     height: "100%",
     backgroundColor: "#fff",
     alignItems: "center",
-    // justifyContent: "space-between",
     justifyContent: "center",
     paddingVertical: 20,
   },
@@ -48,6 +47,17 @@ const styles = StyleSheet.create({
   },
   image: {
     marginBottom: 20,
+    display: "flex",
+    flexDirection: "row",
+    position: "relative",
+  },
+  textSignup: {
+    position: "absolute",
+    right: -10,
+    top: 30,
+    fontWeight: "700",
+    fontSize: 70,
+    lineHeight: 70,
   },
 });
 

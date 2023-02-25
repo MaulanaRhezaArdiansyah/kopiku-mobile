@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     lineHeight: 80,
     fontWeight: "700",
     textAlign: "center",
-    marginBottom: 20,
+    marginBottom: 10,
   },
   enterEmail: {
     fontSize: 20,

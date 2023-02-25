@@ -9,8 +9,11 @@ export default function Login({ navigation }) {
         <Text style={styles.textHeroLogin}>Log{"\n"}in</Text>
       </View>
       <View>
-        <TextInput style={styles.inputForm}>Enter your email address</TextInput>
-        <TextInput style={styles.inputForm}>Enter your password</TextInput>
+        <TextInput
+          style={styles.inputForm}
+          placeholder="Enter your email address"
+        />
+        <TextInput style={styles.inputForm} placeholder="Enter your password" />
       </View>
       <Pressable onPress={() => navigation.navigate("Forgot Password")}>
         <View
@@ -20,7 +23,7 @@ export default function Login({ navigation }) {
         </View>
       </Pressable>
 
-      <Pressable onPress={() => navigation.navigate("Login Page")}>
+      <Pressable onPress={() => navigation.navigate("Home Page")}>
         <View style={styles.loginButton}>
           <Text style={{ color: "#fff", fontSize: 20, fontWeight: "600" }}>
             Login
