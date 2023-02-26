@@ -12,6 +12,11 @@ export default function Payment({ navigation }) {
         <Text style={styles.headerText}>Payment</Text>
         <Text>{""}</Text>
       </View>
+
+      <View>
+        <Text>Payment Methods</Text>
+      </View>
+
       <Pressable
         style={[commonStyle.brownButton]}
         onPress={() => navigation.navigate("Home Page")}

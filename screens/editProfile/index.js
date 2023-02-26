@@ -12,6 +12,7 @@ export default function EditProfile({ navigation }) {
         <Text style={styles.headerText}>My Profile</Text>
         <Text>{""}</Text>
       </View>
+
       <Pressable
         style={[commonStyle.brownButton]}
         onPress={() => navigation.navigate("Profile Page")}
