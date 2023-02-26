@@ -6,6 +6,10 @@ const commonStyle = StyleSheet.create({
     paddingLeft: 40,
     paddingRight: 40,
   },
+  px20: {
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
   mr20: {
     marginRight: 20,
   },

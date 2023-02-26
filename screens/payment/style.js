@@ -46,6 +46,15 @@ const styles = StyleSheet.create({
     borderBottomColor: "#9F9F9F",
     marginBottom: 10,
   },
+  paymentMethodOther: {
+    width: 320,
+    height: 200,
+    borderRadius: 20,
+    backgroundColor: "#9f9f9f",
+    marginRight: 10,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   position: {
     justifyContent: "center",
     alignItems: "center",
