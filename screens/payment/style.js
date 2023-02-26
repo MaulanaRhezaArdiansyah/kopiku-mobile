@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     width: "100%",
     alignItems: "center",
-    marginBottom: 50,
+    marginBottom: 30,
   },
   headerText: {
     fontSize: 22,
@@ -26,6 +26,51 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+  },
+  paymentMethodTitle: {
+    borderBottomWidth: 2.5,
+    borderBottomColor: "#9F9F9F",
+    paddingBottom: 10,
+  },
+  paymentMethodTitleText: {
+    fontSize: 25,
+    fontWeight: "700",
+  },
+  paymentOptionSlider: {
+    display: "flex",
+    // justifyContent: "center",
+    // alignItems: "center",
+    width: "100%",
+    height: 280,
+    borderBottomWidth: 2.5,
+    borderBottomColor: "#9F9F9F",
+    marginBottom: 10,
+  },
+  position: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  orderItem: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 10,
+  },
+  orderInfo: {
+    paddingBottom: 20,
+  },
+  totalPayment: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 10,
+  },
+  totalPaymentBox: {
+    marginTop: 10,
+    borderTopColor: "#9F9F9F",
+    borderTopWidth: 2.5,
   },
 });
 export default styles;
