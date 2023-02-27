@@ -1,4 +1,4 @@
-import { Image, Pressable, Text, View } from "react-native";
+import { Image, Pressable, Text, TouchableOpacity, View } from "react-native";
 import commonStyle from "../../src/assets/styles/commonStyle";
 import styles from "./style";
 
@@ -62,14 +62,14 @@ export default function ProductDetail({ navigation }) {
           {productDetail[0].description}
         </Text>
       </View>
-      <Pressable
+      <TouchableOpacity
         style={[commonStyle.brownButton]}
         onPress={() => navigation.navigate("Cart Page")}
       >
         <Text style={{ color: "#fff", fontSize: 20, fontWeight: "700" }}>
           Add to cart
         </Text>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 }

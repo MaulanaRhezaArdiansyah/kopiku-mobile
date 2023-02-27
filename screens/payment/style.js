@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     height: "100%",
     // paddingTop: 80,
     paddingTop: 60,
+    position: "relative",
   },
   navbar: {
     display: "flex",
@@ -80,6 +81,52 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderTopColor: "#9F9F9F",
     borderTopWidth: 2.5,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    width: 250,
+    height: 200,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    justifyContent: "center",
+  },
+  button: {
+    borderRadius: 20,
+    width: 150,
+    height: 50,
+    padding: 10,
+    elevation: 2,
+    justifyContent: "center",
+  },
+  buttonClose: {
+    backgroundColor: "#6A4029",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+    fontSize: 16,
+  },
+  modalText: {
+    fontSize: 18,
+    marginBottom: 15,
+    textAlign: "center",
+    fontWeight: "700",
   },
 });
 export default styles;

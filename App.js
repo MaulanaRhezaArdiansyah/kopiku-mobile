@@ -12,6 +12,9 @@ import DeliveryMethod from "./screens/deliveryMethod";
 import Payment from "./screens/payment";
 import Profile from "./screens/profile";
 import EditProfile from "./screens/editProfile";
+import History from "./screens/history";
+import DisplayProduct from "./screens/home/DisplayProduct";
+import SeeMore from "./screens/seeMore";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -143,6 +146,16 @@ export default function App() {
           name="Edit Profile Page"
           component={EditProfile}
           options={{ title: "Edit Profile Page", headerShown: false }}
+        />
+        <Stack.Screen
+          name="History Page"
+          component={History}
+          options={{ title: "History Page", headerShown: false }}
+        />
+        <Stack.Screen
+          name="See More Page"
+          component={SeeMore}
+          options={{ title: "See More Page", headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

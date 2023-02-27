@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { FlatList, Image, Pressable, Text, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  Pressable,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import commonStyle from "../../src/assets/styles/commonStyle";
 import styles from "./style";
 export default function Cart({ navigation }) {
@@ -85,14 +92,14 @@ export default function Cart({ navigation }) {
           );
         }}
       />
-      <Pressable
+      <TouchableOpacity
         style={[commonStyle.brownButton, { marginBottom: 30 }]}
         onPress={() => navigation.navigate("Delivery Method Page")}
       >
         <Text style={{ color: "#fff", fontSize: 20, fontWeight: "700" }}>
           Confirm and Checkout
         </Text>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 }

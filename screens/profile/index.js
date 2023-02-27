@@ -75,7 +75,7 @@ export default function Profile({ navigation }) {
             >
               Order History
             </Text>
-            <Pressable>
+            <Pressable onPress={() => navigation.navigate("History Page")}>
               <Text style={[commonStyle.textBrown, { fontSize: 15 }]}>
                 See more
               </Text>
@@ -93,35 +93,38 @@ export default function Profile({ navigation }) {
         </View>
 
         <View style={styles.buttonProfileBox}>
-          <View style={styles.buttonProfileCard}>
+          <Pressable
+            style={styles.buttonProfileCard}
+            onPress={() => navigation.navigate("Edit Profile Page")}
+          >
             <Text style={{ fontSize: 18, fontWeight: "700", color: "#6A4029" }}>
               Edit Profile
             </Text>
             <Image
               source={require("../../src/assets/images/arrow-right.png")}
             />
-          </View>
-          <View style={styles.buttonProfileCard}>
+          </Pressable>
+          <Pressable style={styles.buttonProfileCard}>
             <Text style={{ fontSize: 18, fontWeight: "700", color: "#6A4029" }}>
               FAQ
             </Text>
             <Image
               source={require("../../src/assets/images/arrow-right.png")}
             />
-          </View>
-          <View style={styles.buttonProfileCard}>
+          </Pressable>
+          <Pressable style={styles.buttonProfileCard}>
             <Text style={{ fontSize: 18, fontWeight: "700", color: "#6A4029" }}>
               Help
             </Text>
             <Image
               source={require("../../src/assets/images/arrow-right.png")}
             />
-          </View>
+          </Pressable>
         </View>
 
         <Pressable
           style={[commonStyle.brownButton, { width: "100%" }]}
-          onPress={() => navigation.navigate("Home Page")}
+          // onPress={() => navigation.navigate("Home Page")}
         >
           <Text style={{ color: "#fff", fontSize: 20, fontWeight: "700" }}>
             Save

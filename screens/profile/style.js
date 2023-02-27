@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   buttonProfileBox: {
-    paddingVertical: 20,
+    paddingTop: 20,
+    // paddingVertical: 20,
   },
   buttonProfileCard: {
     height: 50,

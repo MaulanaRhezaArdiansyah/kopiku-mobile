@@ -94,14 +94,14 @@ export default function DeliveryMethod({ navigation }) {
         <Text style={{ fontSize: 24, fontWeight: "900" }}>IDR 123.000</Text>
       </View>
 
-      <Pressable
+      <TouchableOpacity
         style={[commonStyle.brownButton]}
         onPress={() => navigation.navigate("Payment Page")}
       >
         <Text style={{ color: "#fff", fontSize: 20, fontWeight: "700" }}>
           Proceed to payment
         </Text>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 }

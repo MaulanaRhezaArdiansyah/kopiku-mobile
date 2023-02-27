@@ -1,8 +1,20 @@
-import { Image, Pressable, ScrollView, Text, View } from "react-native";
+import { useState } from "react";
+import {
+  Alert,
+  Image,
+  Modal,
+  Pressable,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import commonStyle from "../../src/assets/styles/commonStyle";
+// import ModalPaymentSuccess from "../../src/components/modalPayment/modalPaymentSuccess";
 
 import styles from "./style";
 export default function Payment({ navigation }) {
+  const [modalVisible, setModalVisible] = useState(false);
   const paymentMethod = [
     {
       id: 1,
@@ -113,14 +125,43 @@ export default function Payment({ navigation }) {
         </View>
       </View>
 
-      <Pressable
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>Payment success!</Text>
+            <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => {
+                setModalVisible(!modalVisible);
+                // setTimeout(navigation.navigate("Home Page"), 2000);
+                navigation.navigate("Home Page");
+              }}
+            >
+              <Text style={styles.textStyle}>OK! Got it!</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+
+      <TouchableOpacity
         style={[commonStyle.brownButton]}
-        onPress={() => navigation.navigate("Home Page")}
+        onPress={() => {
+          setModalVisible(true);
+          // return <ModalPaymentSuccess />;
+        }}
       >
         <Text style={{ color: "#fff", fontSize: 20, fontWeight: "700" }}>
           Pay Now
         </Text>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 }

@@ -36,5 +36,8 @@ const commonStyle = StyleSheet.create({
     borderRadius: 20,
     marginBottom: 20,
   },
+  textBold700: {
+    fontWeight: "700",
+  },
 });
 export default commonStyle;

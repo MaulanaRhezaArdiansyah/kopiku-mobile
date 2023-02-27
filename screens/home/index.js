@@ -2,6 +2,7 @@ import {
   FlatList,
   Image,
   Pressable,
+  SafeAreaView,
   ScrollView,
   Text,
   TextInput,
@@ -9,15 +10,10 @@ import {
 } from "react-native";
 import styles from "./style";
 import commonStyle from "../../src/assets/styles/commonStyle";
+import DisplayProduct from "./DisplayProduct";
 export default function HomePage({ navigation }) {
-  const products = [
-    { id: 1, productTitle: "Hazelnut Latte", productPrice: "20000" },
-    { id: 2, productTitle: "Creamy Ice Latte", productPrice: "16000" },
-    { id: 3, productTitle: "Cappucino", productPrice: "15000" },
-    { id: 4, productTitle: "Mbahman Coffee", productPrice: "12000" },
-  ];
   return (
-    <View style={[commonStyle.bgBase, styles.container]}>
+    <SafeAreaView style={[commonStyle.bgBase, styles.container]}>
       <View style={[commonStyle.px40, styles.navbar]}>
         <View>
           <Pressable>
@@ -44,7 +40,7 @@ export default function HomePage({ navigation }) {
             <View style={[styles.profilePic]}>
               <Image
                 style={commonStyle.imageCircle}
-                source={require("../../src/assets/images/profile-pic.png")}
+                source={require("../../src/assets/images/rheza-profile-pic-2.png")}
               />
             </View>
           </Pressable>
@@ -69,6 +65,11 @@ export default function HomePage({ navigation }) {
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <Pressable>
             <View style={[styles.tabTextBox1, commonStyle.pl40]}>
+              <Text style={styles.tabText}>All You Need</Text>
+            </View>
+          </Pressable>
+          <Pressable>
+            <View style={[styles.tabTextBox]}>
               <Text style={styles.tabText}>Favorite</Text>
             </View>
           </Pressable>
@@ -104,62 +105,12 @@ export default function HomePage({ navigation }) {
         <Text style={[commonStyle.textBrown, styles.textCategoryTitle]}>
           Coffee
         </Text>
-        <Pressable>
+        <Pressable onPress={() => navigation.navigate("See More Page")}>
           <Text style={[commonStyle.textBrown, styles.seeMore]}>See more</Text>
         </Pressable>
       </View>
 
-      <FlatList
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        data={products}
-        renderItem={(p) => {
-          return (
-            <Pressable
-              style={styles.cardWrapper}
-              onPress={() => {
-                navigation.navigate("Product Detail Page");
-              }}
-            >
-              <Image
-                source={require("../../src/assets/images/hazelnut-contoh.jpg")}
-                style={styles.productImage}
-              />
-              <View style={styles.card}>
-                <Text style={styles.productTitleText}>
-                  {p.item.productTitle}
-                </Text>
-                <Text style={[commonStyle.textBrown, styles.productPriceText]}>
-                  IDR. {p.item.productPrice}
-                </Text>
-              </View>
-            </Pressable>
-          );
-        }}
-      />
-      {/* <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {products.map((p) => {
-          return (
-            <Pressable
-              style={styles.cardWrapper}
-              onPress={() => {
-                navigation.navigate("Product Detail Page");
-              }}
-            >
-              <Image
-                source={require("../../src/assets/images/hazelnut-contoh.jpg")}
-                style={styles.productImage}
-              />
-              <View style={styles.card}>
-                <Text style={styles.productTitleText}>{p.productTitle}</Text>
-                <Text style={[commonStyle.textBrown, styles.productPriceText]}>
-                  IDR. {p.productPrice}
-                </Text>
-              </View>
-            </Pressable>
-          );
-        })}
-      </ScrollView> */}
-    </View>
+      <DisplayProduct />
+    </SafeAreaView>
   );
 }
