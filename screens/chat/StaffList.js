@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { Image, ScrollView, Text, TouchableOpacity } from "react-native";
 import styles from "./style";
 export default function StaffList() {
@@ -23,6 +24,7 @@ export default function StaffList() {
       staffName: "Messi",
     },
   ];
+  const navigation = useNavigation();
   return (
     <ScrollView
       horizontal
@@ -30,7 +32,11 @@ export default function StaffList() {
       contentContainerStyle={styles.chatBalloonRow}
     >
       {staff.map((i) => (
-        <TouchableOpacity key={i.id} style={styles.chatBalloonWrap}>
+        <TouchableOpacity
+          key={i.id}
+          style={styles.chatBalloonWrap}
+          onPress={() => navigation.navigate("Chatroom Page")}
+        >
           <Image
             style={styles.chatPic}
             source={require("../../src/assets/images/rheza-profile-pic-2.png")}

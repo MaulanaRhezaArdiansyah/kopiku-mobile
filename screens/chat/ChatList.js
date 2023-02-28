@@ -1,6 +1,7 @@
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import styles from "./style";
 import commonStyle from "../../src/assets/styles/commonStyle";
+import { useNavigation } from "@react-navigation/native";
 export default function ChatList() {
   const message = [
     {
@@ -33,10 +34,15 @@ export default function ChatList() {
       statusReceive: "yesterday", // seharusnya memakai hitungan date dan math
     },
   ];
+  const navigation = useNavigation();
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={{ height: 300 }}>
       {message.map((c) => (
-        <TouchableOpacity key={c.id} style={[commonStyle.px40, styles.chatBox]}>
+        <TouchableOpacity
+          key={c.id}
+          style={[commonStyle.px40, styles.chatBox]}
+          onPress={() => navigation.navigate("Chatroom Page")}
+        >
           <Image
             style={styles.chatImage}
             source={require("../../src/assets/images/rheza-profile-pic-2.png")}
