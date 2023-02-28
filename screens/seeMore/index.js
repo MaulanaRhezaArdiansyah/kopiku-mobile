@@ -8,6 +8,8 @@ export default function SeeMore({ navigation }) {
     { id: 2, productTitle: "Creamy Ice Latte", productPrice: "16000" },
     { id: 3, productTitle: "Cappucino", productPrice: "15000" },
     { id: 4, productTitle: "Mbahman Coffee", productPrice: "12000" },
+    { id: 5, productTitle: "Mbahman Coffee", productPrice: "12000" },
+    { id: 6, productTitle: "Mbahman Coffee", productPrice: "12000" },
   ];
   return (
     <View style={[commonStyle.px40, styles.container]}>
@@ -21,6 +23,7 @@ export default function SeeMore({ navigation }) {
       <FlatList
         style={styles.listProduct}
         numColumns={2}
+        showsVerticalScrollIndicator={false}
         // contentContainerStyle={styles.cardRowContainer}
         data={coffee}
         renderItem={(i) => {

@@ -11,7 +11,9 @@ import {
 import styles from "./style";
 import commonStyle from "../../src/assets/styles/commonStyle";
 import DisplayProduct from "./DisplayProduct";
-export default function HomePage({ navigation }) {
+import { useNavigation } from "@react-navigation/native";
+export default function HomePage() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={[commonStyle.bgBase, styles.container]}>
       <View style={[commonStyle.px40, styles.navbar]}>
@@ -23,7 +25,7 @@ export default function HomePage({ navigation }) {
           </Pressable>
         </View>
         <View style={styles.navbarRight}>
-          <Pressable>
+          <Pressable onPress={() => navigation.navigate("Chat Page")}>
             <Image
               style={commonStyle.mr20}
               source={require("../../src/assets/images/chat.png")}

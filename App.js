@@ -15,6 +15,8 @@ import EditProfile from "./screens/editProfile";
 import History from "./screens/history";
 import DisplayProduct from "./screens/home/DisplayProduct";
 import SeeMore from "./screens/seeMore";
+import Coupons from "./screens/coupons";
+import Chat from "./screens/chat";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -156,6 +158,16 @@ export default function App() {
           name="See More Page"
           component={SeeMore}
           options={{ title: "See More Page", headerShown: false }}
+        />
+        <Stack.Screen
+          name="Coupons Page"
+          component={Coupons}
+          options={{ title: "Coupons Page", headerShown: false }}
+        />
+        <Stack.Screen
+          name="Chat Page"
+          component={Chat}
+          options={{ title: "Chat Page", headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
