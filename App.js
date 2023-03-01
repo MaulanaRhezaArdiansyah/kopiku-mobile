@@ -1,4 +1,7 @@
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  BaseNavigationContainer,
+  NavigationContainer,
+} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Welcome from "./screens/welcome";
 import HomePage from "./screens/home";
@@ -18,6 +21,11 @@ import SeeMore from "./screens/seeMore";
 import Coupons from "./screens/coupons";
 import Chat from "./screens/chat";
 import Chatroom from "./screens/chatroom";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import DrawerCustom from "./src/components/DrawerCustom";
+import Icon from "@expo/vector-icons/Ionicons";
+
+const Drawer = createDrawerNavigator();
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -87,12 +95,70 @@ export default function App() {
   //     </Stack.Navigator>
   //   </NavigationContainer>
   // );
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
+  const HomePageDrawer = () => {
+    return (
+      <Drawer.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerShown: false,
+          drawerActiveTintColor: "#fff",
+          drawerInactiveTintColor: "#6A4029",
+          drawerActiveBackgroundColor: "#6A4029",
+          drawerItemStyle: { borderBottomWidth: 1, borderBottomColor: "#000" },
+          drawerType: "slide",
+        }}
+        drawerContent={DrawerCustom}
+      >
+        <Drawer.Screen
           name="Home Page"
           component={HomePage}
+          options={{
+            drawerIcon: ({ color, focused }) => {
+              if (focused) {
+                return <Icon name="home" size={26} color={color} />;
+              } else {
+                return <Icon name="home-outline" size={26} color="#6A4029" />;
+              }
+            },
+          }}
+        />
+        <Drawer.Screen
+          name="Edit Profile Page"
+          component={EditProfile}
+          options={{
+            drawerIcon: ({ color, focused }) => {
+              if (focused) {
+                return <Icon name="person" size={26} color={color} />;
+              } else {
+                return <Icon name="person-outline" size={26} color="#6A4029" />;
+              }
+            },
+          }}
+        />
+        <Drawer.Screen
+          name="Cart Page"
+          component={Cart}
+          options={{
+            drawerIcon: ({ color, focused }) => {
+              if (focused) {
+                return <Icon name="cart" size={26} color={color} />;
+              } else {
+                return <Icon name="cart-outline" size={26} color="#6A4029" />;
+              }
+            },
+          }}
+        />
+      </Drawer.Navigator>
+    );
+  };
+  return (
+    <BaseNavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          // name="Home Page"
+          name="Home Drawer"
+          // component={HomePage}
+          component={HomePageDrawer}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -176,6 +242,6 @@ export default function App() {
           options={{ title: "Chatroom Page", headerShown: false }}
         />
       </Stack.Navigator>
-    </NavigationContainer>
+    </BaseNavigationContainer>
   );
 }

@@ -5,21 +5,15 @@ import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import axios from "axios";
 export default function DisplayProduct({ keyword, category }) {
-  const products = [
-    { id: 1, productTitle: "Hazelnut Latte", productPrice: "20000" },
-    { id: 2, productTitle: "Creamy Ice Latte", productPrice: "16000" },
-    { id: 3, productTitle: "Cappucino", productPrice: "15000" },
-    { id: 4, productTitle: "Mbahman Coffee", productPrice: "12000" },
-  ];
   const navigation = useNavigation();
   const [dataProducts, setDataProducts] = useState([]);
-  console.log(keyword);
+  // console.log(keyword);
   useEffect(() => {
     axios
       .get(
-        `http://192.168.1.11:3001/api/v1/products${
-          keyword ? `?search=${keyword}` : ""
-        }${category ? `?cat=${category}` : ""}`
+        `http://192.168.1.11:3001/api/v1/products?limit=6${
+          keyword ? `&search=${keyword}` : ""
+        }${category ? `&cat=${category}` : ""}`
       )
       .then((result) => {
         setDataProducts(result.data.data);
@@ -28,6 +22,7 @@ export default function DisplayProduct({ keyword, category }) {
         console.log(err.response.data.message);
       });
   }, [keyword, category]);
+  // console.log(dataProducts);
   return (
     <>
       <FlatList
@@ -37,16 +32,23 @@ export default function DisplayProduct({ keyword, category }) {
         renderItem={(p) => {
           return (
             <Pressable
+              android_ripple={{
+                color: "#f2f2f2",
+                foreground: true,
+                radius: 100,
+                borderless: true,
+              }}
               style={styles.cardWrapper}
               onPress={() => {
-                navigation.navigate("Product Detail Page");
+                navigation.navigate("Product Detail Page", {
+                  productId: p.item.id,
+                });
               }}
             >
               <Image
                 source={{
                   uri: `http://192.168.1.11:3001/uploads/images/${p.item.images[0].filename}`,
                 }}
-                // source={require("../../src/assets/images/hazelnut-contoh.jpg")}
                 style={styles.productImage}
               />
               <View style={styles.card}>

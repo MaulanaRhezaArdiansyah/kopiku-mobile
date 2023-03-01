@@ -75,6 +75,13 @@ const styles = StyleSheet.create({
   tabText: {
     fontSize: 18,
   },
+  tabTextActive: {
+    fontSize: 18,
+    fontWeight: "700",
+    color: "#6A4029",
+    borderBottomColor: "#6A4029",
+    borderBottomWidth: 2,
+  },
   scrollTabCategory: {
     height: 60,
     marginBottom: 20,

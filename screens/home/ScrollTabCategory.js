@@ -1,7 +1,11 @@
 import { Pressable, ScrollView, Text, View } from "react-native";
 import styles from "./style";
 import commonStyle from "../../src/assets/styles/commonStyle";
-export default function ScrollTabCategory({ setCategory, setRefetch }) {
+export default function ScrollTabCategory({
+  setCategory,
+  setRefetch,
+  category,
+}) {
   return (
     <View style={styles.scrollTabCategory}>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -12,19 +16,27 @@ export default function ScrollTabCategory({ setCategory, setRefetch }) {
           }}
         >
           <View style={[styles.tabTextBox1, commonStyle.pl40]}>
-            <Text style={styles.tabText}>All You Need</Text>
+            <Text
+              style={
+                category === "" || undefined
+                  ? styles.tabTextActive
+                  : styles.tabText
+              }
+            >
+              All You Need
+            </Text>
           </View>
         </Pressable>
-        <Pressable>
+        {/* <Pressable>
           <View style={[styles.tabTextBox]}>
             <Text style={styles.tabText}>Favorite</Text>
           </View>
-        </Pressable>
-        <Pressable>
+        </Pressable> */}
+        {/* <Pressable>
           <View style={styles.tabTextBox}>
             <Text style={styles.tabText}>Promo</Text>
           </View>
-        </Pressable>
+        </Pressable> */}
         <Pressable
           onPress={() => {
             setCategory("Coffee");
@@ -32,17 +44,27 @@ export default function ScrollTabCategory({ setCategory, setRefetch }) {
           }}
         >
           <View style={styles.tabTextBox}>
-            <Text style={styles.tabText}>Coffee</Text>
+            <Text
+              style={
+                category === "Coffee" ? styles.tabTextActive : styles.tabText
+              }
+            >
+              Coffee
+            </Text>
           </View>
         </Pressable>
         <Pressable
           onPress={() => {
-            setCategory("Non Coffee");
+            setCategory("Non");
             setRefetch(true);
           }}
         >
           <View style={styles.tabTextBox}>
-            <Text style={styles.tabText}>Non-coffee</Text>
+            <Text
+              style={category === "Non" ? styles.tabTextActive : styles.tabText}
+            >
+              Non-coffee
+            </Text>
           </View>
         </Pressable>
         <Pressable
@@ -52,7 +74,13 @@ export default function ScrollTabCategory({ setCategory, setRefetch }) {
           }}
         >
           <View style={styles.tabTextBox}>
-            <Text style={styles.tabText}>Foods</Text>
+            <Text
+              style={
+                category === "Foods" ? styles.tabTextActive : styles.tabText
+              }
+            >
+              Foods
+            </Text>
           </View>
         </Pressable>
         <Pressable
@@ -62,7 +90,13 @@ export default function ScrollTabCategory({ setCategory, setRefetch }) {
           }}
         >
           <View style={styles.tabTextBox}>
-            <Text style={styles.tabText}>Add-on</Text>
+            <Text
+              style={
+                category === "Add on" ? styles.tabTextActive : styles.tabText
+              }
+            >
+              Add-on
+            </Text>
           </View>
         </Pressable>
       </ScrollView>

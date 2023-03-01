@@ -66,6 +66,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  button: {
+    // height: 100,
+    // justifyContent: "flex-end",
+    alignItems: "center",
+    // backgroundColor: "red",
+  },
 });
 
 export default styles;

@@ -20,7 +20,7 @@ export default function NavbarHome() {
   return (
     <View style={[commonStyle.px40, styles.navbar]}>
       <View>
-        <Pressable>
+        <Pressable onPress={() => navigation.toggleDrawer()}>
           <Image
             source={require("../../src/assets/images/hamburger-menu.png")}
           />

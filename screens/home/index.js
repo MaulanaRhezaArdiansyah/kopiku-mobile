@@ -1,4 +1,4 @@
-import { SafeAreaView, Text, View } from "react-native";
+import { Pressable, SafeAreaView, Text, View } from "react-native";
 import styles from "./style";
 import commonStyle from "../../src/assets/styles/commonStyle";
 import DisplayProduct from "./DisplayProduct";
@@ -19,15 +19,24 @@ export default function HomePage() {
         <Text style={styles.title}>A good coffee is{"\n"}a good day</Text>
       </View>
       <SearchBox setKeyword={setKeyword} />
-      <ScrollTabCategory setCategory={setCategory} setRefetch={setRefetch} />
-      {/* <View style={[commonStyle.px40, styles.categoryTitle]}>
+      <ScrollTabCategory
+        setCategory={setCategory}
+        setRefetch={setRefetch}
+        // refetch={refetch}
+        category={category}
+      />
+      <View style={[commonStyle.px40, styles.categoryTitle]}>
         <Text style={[commonStyle.textBrown, styles.textCategoryTitle]}>
-          Coffee
+          {category ? category : "All"}
         </Text>
-        <Pressable onPress={() => navigation.navigate("See More Page")}>
+        <Pressable
+          onPress={() =>
+            navigation.navigate("See More Page", { category: category })
+          }
+        >
           <Text style={[commonStyle.textBrown, styles.seeMore]}>See more</Text>
         </Pressable>
-      </View> */}
+      </View>
 
       <DisplayProduct keyword={keyword} category={category} />
     </SafeAreaView>
