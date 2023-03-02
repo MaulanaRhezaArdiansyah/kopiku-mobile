@@ -4,10 +4,30 @@ import commonStyle from "../../src/assets/styles/commonStyle";
 import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ProductNotFound from "./ProductNotFound";
 export default function DisplayProduct({ keyword, category }) {
   const navigation = useNavigation();
-  const [dataProducts, setDataProducts] = useState([]);
-  // console.log(keyword);
+  const [dataProducts, setDataProducts] = useState([
+    {
+      id: "",
+      title: "",
+      price: "",
+      image: "",
+      category: "",
+      description: "",
+      images: [
+        {
+          product_id: "",
+          name: "",
+          filename: "",
+        },
+      ],
+    },
+  ]);
+  const [notFound, setNotFound] = useState({
+    error: false,
+    message: "",
+  });
   useEffect(() => {
     axios
       .get(
@@ -17,12 +37,21 @@ export default function DisplayProduct({ keyword, category }) {
       )
       .then((result) => {
         setDataProducts(result.data.data);
+        setNotFound({
+          error: false,
+          message: "",
+        });
       })
       .catch((err) => {
-        console.log(err.response.data.message);
+        setNotFound({
+          error: true,
+          message: err.response.data.message,
+        });
       });
   }, [keyword, category]);
-  // console.log(dataProducts);
+  if (notFound.error) {
+    return <ProductNotFound />;
+  }
   return (
     <>
       <FlatList
@@ -47,7 +76,9 @@ export default function DisplayProduct({ keyword, category }) {
             >
               <Image
                 source={{
-                  uri: `http://192.168.1.11:3001/uploads/images/${p.item.images[0].filename}`,
+                  uri: p.item.images[0].filename
+                    ? `http://192.168.1.11:3001/uploads/images/${p.item.images[0].filename}`
+                    : "https://user-images.githubusercontent.com/43302778/106805462-7a908400-6645-11eb-958f-cd72b74a17b3.jpg",
                 }}
                 style={styles.productImage}
               />
@@ -61,29 +92,6 @@ export default function DisplayProduct({ keyword, category }) {
           );
         }}
       />
-      {/* <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {products.map((p) => {
-          return (
-            <Pressable
-              style={styles.cardWrapper}
-              onPress={() => {
-                navigation.navigate("Product Detail Page");
-              }}
-            >
-              <Image
-                source={require("../../src/assets/images/hazelnut-contoh.jpg")}
-                style={styles.productImage}
-              />
-              <View style={styles.card}>
-                <Text style={styles.productTitleText}>{p.productTitle}</Text>
-                <Text style={[commonStyle.textBrown, styles.productPriceText]}>
-                  IDR. {p.productPrice}
-                </Text>
-              </View>
-            </Pressable>
-          );
-        })}
-      </ScrollView> */}
     </>
   );
 }

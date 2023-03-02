@@ -15,6 +15,7 @@ export default function SearchBox({ setKeyword }) {
           onChangeText={(text) => setKeyword(text)}
           style={styles.searchInput}
           placeholder="Search"
+          selectionColor={"#6A4029"}
         />
       </View>
     </View>

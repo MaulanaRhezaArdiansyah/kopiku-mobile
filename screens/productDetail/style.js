@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
   productTitleText: {
     fontWeight: "900",
     fontSize: 40,
+    textAlign: "center",
   },
   productPriceText: {
     fontWeight: "700",

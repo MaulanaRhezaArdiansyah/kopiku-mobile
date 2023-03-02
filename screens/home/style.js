@@ -53,8 +53,11 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   searchInput: {
+    width: "100%",
+    height: "100%",
     fontSize: 18,
     fontWeight: "900",
+    color: "#6A4029",
   },
 
   // TAB CATEGORY
@@ -146,6 +149,23 @@ const styles = StyleSheet.create({
     // backgroundColor: "red",
   },
   productPriceText: { fontSize: 20, fontWeight: "700", marginBottom: 40 },
+
+  notFound: {
+    height: 300,
+    paddingHorizontal: 40,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#e2e2e2",
+    marginTop: 10,
+    borderRadius: 200,
+    width: 400,
+    alignSelf: "center",
+  },
+  notFoundText: {
+    fontSize: 26,
+    color: "#6A4029",
+    textAlign: "center",
+  },
 });
 
 export default styles;
